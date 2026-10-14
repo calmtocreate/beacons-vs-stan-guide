@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f8f6f4">
+  <meta name="description" content="A calm, beginner-friendly comparison of Beacons and Stan Store: costs, features, and the questions to ask before choosing a creator storefront.">
+  <title>Beacons vs. Stan Store | Calm to Create</title>
+  <style>
+    :root {
+      --ivory:#f8f6f4; --sage:#bfcac3; --beige:#d6c8b8;
+      --peach:#e0b7a3; --ink:#3f3f3f; --white:#ffffff;
+      --line:#e6e0dc; --muted:#67615d; --dark-sage:#455e54;
+      --shadow:0 14px 34px rgba(63,63,63,.075);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--ivory); color:var(--ink);
+      font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.65; }
+    a { color:var(--dark-sage); }
+    a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+      outline:3px solid var(--dark-sage); outline-offset:4px;
+    }
+
+    /* Screen-reader-only text (e.g. "opens in a new tab") */
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    /* Skip link: hidden until a keyboard user tabs to it */
+    .skip-link { position:absolute; left:16px; top:-60px; z-index:10; background:var(--ink);
+      color:var(--white); padding:10px 16px; border-radius:10px; font-weight:700; text-decoration:none; }
+    .skip-link:focus { top:12px; }
+
+    .wrap { width:min(1080px,calc(100% - 40px)); margin-inline:auto; }
+    .nav { border-bottom:1px solid var(--line); background:rgba(248,246,244,.98); }
+    .nav-inner { min-height:77px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font-family:Georgia,"Times New Roman",serif; font-size:23px; text-decoration:none; color:var(--ink); white-space:nowrap; }
+    .brand small { display:block; font-family:ui-sans-serif,system-ui,sans-serif; font-size:11px;
+      letter-spacing:.12em; text-transform:uppercase; color:var(--muted); line-height:1.3; }
+    .nav-links { display:flex; flex-wrap:wrap; gap:6px 10px; font-size:14px; }
+    /* Larger tap targets (about 44px tall) without changing the look */
+    .nav-links a { text-decoration:none; font-weight:600; display:inline-flex; align-items:center;
+      min-height:44px; padding:0 8px; }
+    main { overflow:hidden; }
+    .hero { padding:85px 0 58px; position:relative; }
+    .hero:after { content:""; position:absolute; width:420px; height:420px; border-radius:50%;
+      background:var(--sage); opacity:.23; right:-180px; top:-170px; z-index:-1; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.17em; font-size:12px;
+      font-weight:800; color:var(--dark-sage); }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:500; line-height:1.17; }
+    h1 { font-size:clamp(40px,7vw,77px); letter-spacing:-.045em; margin:18px 0 22px; max-width:850px; }
+    h1 em { font-style:normal; background:linear-gradient(transparent 69%,var(--peach) 69%); }
+    .lede { font-size:clamp(17px,2.1vw,21px); max-width:730px; color:var(--muted); margin:0 0 26px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin:20px 0 30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:7px;
+      min-height:49px; padding:11px 20px; border-radius:12px; font-weight:700;
+      text-decoration:none; font-size:15px; text-align:center; transition:transform .14s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--ink); color:var(--white); }
+    .btn-secondary { background:var(--white); border:1px solid #cfc7c0; color:var(--ink); }
+    .disclosure { max-width:800px; background:#fffaf7; padding:17px 20px; border:1px solid #ecdacb;
+      border-left:4px solid var(--peach); border-radius:12px; font-size:14px; margin:0; }
+    .section { padding:55px 0; }
+    .section-top { max-width:760px; margin-bottom:25px; }
+    .section h2, .cta-section h2 { font-size:clamp(31px,4vw,45px); margin:12px 0; letter-spacing:-.025em; }
+    .sub { color:var(--muted); margin:0; }
+    .three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .panel { background:var(--white); border:1px solid var(--line); border-radius:18px; padding:25px; box-shadow:var(--shadow); }
+    .panel h3 { font-size:24px; margin:14px 0 10px; }
+    .panel p { margin:0; color:var(--muted); }
+    .number { display:inline-grid; place-items:center; width:35px; height:35px; border-radius:50%;
+      background:var(--sage); font-weight:700; font-size:13px; }
+    .shade { background:#eee9e4; }
+
+    /* Comparison table */
+    .comparison { overflow-x:auto; border:1px solid #ded6d0; border-radius:16px; background:var(--white); }
+    table { width:100%; border-collapse:collapse; text-align:left; min-width:640px; }
+    caption { text-align:left; padding:16px 19px 0; font-size:13px; color:var(--muted); }
+    th,td { padding:16px 19px; border-bottom:1px solid #eee9e6; vertical-align:top; }
+    thead th { background:#e8eee9; font-size:15px; color:#35463e; }
+    tbody th { font-weight:700; width:27%; }
+    tr:last-child th, tr:last-child td { border-bottom:none; }
+    tbody tr:nth-child(even) > * { background:#fcfaf9; }
+
+    .fine { font-size:13px; color:var(--muted); }
+    .sources { display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:14px; font-size:14px; }
+    .sources a { display:inline-flex; align-items:center; min-height:44px; }
+    .note { padding:19px 23px; background:#f2ede8; border-radius:14px; margin-top:22px; }
+    .two { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    ul { padding-left:20px; } li { margin-bottom:7px; }
+    .personal { border-left:5px solid var(--sage); background:white; padding:25px 28px; border-radius:0 16px 16px 0; }
+    .cta-section { padding:60px 0 75px; }
+    .cta-card { display:flex; flex-direction:column; min-height:285px; }
+    .cta-card .btn { margin-top:auto; }
+    .cta-card p { color:var(--muted); margin-bottom:18px; }
+    .link-status { font-size:13px; margin-top:12px; color:var(--muted); }
+    .stamp { font-size:12px; color:var(--muted); margin-top:16px; }
+    footer { padding:28px 0 40px; border-top:1px solid var(--line); font-size:13px; color:var(--muted); }
+
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 30px,1080px); }
+      .nav-inner { align-items:flex-start; flex-direction:column; gap:4px; padding:14px 0; }
+      .nav-links { margin-left:-8px; }
+      .hero { padding:56px 0 42px; }
+      .section { padding:40px 0; }
+      .three,.two { grid-template-columns:1fr; }
+      .panel { padding:22px; }
+      .cta-section { padding:35px 0 50px; }
+      .cta-card { min-height:auto; }
+      .actions .btn, .cta-card .btn { width:100%; }
+    }
+
+    /* On small phones, each table row becomes a stacked card so nothing
+       needs sideways scrolling. Labels come from each cell's data-label. */
+    @media (max-width:640px) {
+      table { min-width:0; }
+      table, thead, tbody, tr, th, td { display:block; }
+      thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+      caption { display:block; padding:16px 16px 4px; }
+      tbody tr { border-bottom:1px solid #e3dcd6; padding:6px 0; }
+      tbody tr:last-child { border-bottom:none; }
+      tbody th { width:auto; background:#e8eee9 !important; color:#35463e; padding:12px 16px; border:0; }
+      td { padding:10px 16px; border:0; }
+      td::before { content:attr(data-label); display:block; font-size:12px; font-weight:800;
+        letter-spacing:.08em; text-transform:uppercase; color:var(--dark-sage); }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      .btn { transition:none; }
+      .btn:hover { transform:none; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Calm to Create<small>An Alicia Builds Online resource</small></a>
+    <nav class="nav-links" aria-label="Page sections">
+      <a href="#compare">Compare</a><a href="#decide">Your fit</a><a href="#explore">Explore</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero" id="content" tabindex="-1">
+    <div class="wrap">
+      <div class="eyebrow">Free guide · No email required</div>
+      <h1>Beacons or Stan Store? <em>Choose the fit, not the hype.</em></h1>
+      <p class="lede">Both platforms help creators organize an online presence. But the right starting point depends on what you're sharing, what you're selling, and what you're ready to spend.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#compare">See the comparison <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-secondary" href="#decide">Find your priorities</a>
+      </div>
+      <aside class="disclosure" aria-label="Affiliate disclosure">
+        <strong>Affiliate disclosure:</strong> I'm an affiliate for both Beacons and Stan Store. I may earn a commission if you sign up or purchase through my referral links, at no additional cost to you when that applies. My goal is to help you make an informed choice; you're not obligated to use either link.
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="decide">
+    <div class="wrap">
+      <div class="section-top">
+        <div class="eyebrow">Before you choose</div>
+        <h2>Start with what you need your page to do.</h2>
+        <p class="sub">Don't pay for features just because someone else uses them. Think about the next job you need your setup to accomplish.</p>
+      </div>
+      <div class="three">
+        <article class="panel"><span class="number" aria-hidden="true">01</span><h3>Share useful links</h3><p>You may mainly need a simple place for resources, recommendations, and your online presence.</p></article>
+        <article class="panel"><span class="number" aria-hidden="true">02</span><h3>Sell a first product</h3><p>You may need a clear product page, checkout, delivery, and a way for interested people to find the offer.</p></article>
+        <article class="panel"><span class="number" aria-hidden="true">03</span><h3>Build more workflows</h3><p>You may want courses, email features, appointments, or additional selling tools as your needs evolve.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shade" id="compare">
+    <div class="wrap">
+      <div class="section-top">
+        <div class="eyebrow">Side-by-side</div>
+        <h2>The practical comparison</h2>
+        <p class="sub">A snapshot of publicly listed plans—not a claim that either platform is right for everyone.</p>
+      </div>
+      <div class="comparison" role="region" aria-labelledby="compare-caption" tabindex="0">
+        <table>
+          <caption id="compare-caption">Beacons and Stan Store plans compared, US dollar prices billed monthly unless noted.</caption>
+          <thead><tr><th scope="col">What matters</th><th scope="col">Beacons</th><th scope="col">Stan Store</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Free starting option</th><td data-label="Beacons">Yes, the Free plan ($0).</td><td data-label="Stan Store">No free plan. A 14-day free trial is offered on Creator and Creator Pro; the first month is charged when the trial ends unless you cancel during the trial.</td></tr>
+            <tr><th scope="row">Entry paid plan</th><td data-label="Beacons">Creator: $10/month.</td><td data-label="Stan Store">Creator: $29/month.</td></tr>
+            <tr><th scope="row">Higher selling-focused plan</th><td data-label="Beacons">Creator Plus: $30/month. A Creator Max tier ($100/month) is also listed.</td><td data-label="Stan Store">Creator Pro: $99/month.</td></tr>
+            <tr><th scope="row">Annual billing</th><td data-label="Beacons">Creator $100/year; Creator Plus $300/year.</td><td data-label="Stan Store">Creator $300/year; Creator Pro $948/year.</td></tr>
+            <tr><th scope="row">Platform fee on sales</th><td data-label="Beacons">9% on Free and Creator; 0% on Creator Plus and Creator Max.</td><td data-label="Stan Store">0% platform transaction fee.</td></tr>
+            <tr><th scope="row">Payment processing</th><td data-label="Beacons">Separate processor fees can apply.</td><td data-label="Stan Store">Separate processor fees can apply.</td></tr>
+            <tr><th scope="row">Digital products</th><td data-label="Beacons">Supports digital-product sales.</td><td data-label="Stan Store">Supports digital-product sales.</td></tr>
+            <tr><th scope="row">Other creator tools</th><td data-label="Beacons">Link-in-bio, website builder, email, and media kit; courses with video hosting and memberships on Creator Plus. Plan limits vary.</td><td data-label="Stan Store">Bookings, courses, memberships, and lead capture on Creator; email broadcasts, funnels, and order bumps on Creator Pro. Plan limits vary.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="stamp"><strong>Pricing checked:</strong> October 14, 2026. Fees, trials, features, taxes, and eligibility can change. Always confirm the latest terms directly with each platform.</p>
+      <div class="sources">
+        <a href="https://website.beacons.ai/i/pricing" target="_blank" rel="noopener noreferrer">Official Beacons pricing <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="https://help.stan.store/article/31-creator-vs-creator-pro" target="_blank" rel="noopener noreferrer">Official Stan plans <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a href="https://help.stan.store/article/406-how-to-subscribe-on-the-stan-mobile-app" target="_blank" rel="noopener noreferrer">Stan free trial details <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+      <div class="note"><strong>Remember:</strong> A 0% <em>platform</em> selling fee doesn't mean there are no costs. Subscription charges and payment-processing fees are separate considerations.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two">
+      <div>
+        <div class="eyebrow">Your decision</div>
+        <h2>Three questions worth answering</h2>
+        <ul>
+          <li>Am I mostly organizing links, or am I ready to sell something now?</li>
+          <li>Would I rather start free, pay a subscription, or compare fees based on expected sales?</li>
+          <li>Which features will I actually use in the next 30–90 days?</li>
+        </ul>
+      </div>
+      <div class="personal">
+        <div class="eyebrow">Alicia's perspective</div>
+        <h3>My preference isn't your rule.</h3>
+        <p>I've used both Beacons and Stan Store, and Beacons has been my primary platform. That's a reflection of how I've chosen to organize my own online business—not proof that it's the best option for yours.</p>
+        <p>Look at your workflow, budget, and the experience you want your visitors to have. <strong>Choose the fit.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section shade" id="explore">
+    <div class="wrap">
+      <div class="section-top">
+        <div class="eyebrow">Keep exploring</div>
+        <h2>Ready to see the platforms for yourself?</h2>
+        <p class="sub">Take a look at both before deciding. You can read this guide for free, with no sign-up required.</p>
+      </div>
+      <p class="disclosure"><strong>Affiliate reminder:</strong> The buttons below may be my referral links, and the note under each button says which kind it is. If you sign up or purchase through a referral link, I may earn a commission, at no additional cost to you when that applies. You can always use the official pricing links above instead.</p>
+      <div class="two" style="margin-top:22px">
+        <article class="panel cta-card">
+          <div class="eyebrow">Option one</div>
+          <h3>Explore Beacons</h3>
+          <p>Worth examining if you want a flexible creator page with link-in-bio tools and a free starting option.</p>
+          <a id="beacons-link" class="btn btn-primary" href="https://website.beacons.ai/" target="_blank" rel="noopener noreferrer" aria-describedby="beacons-status"><span class="btn-label">View Beacons</span> <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <span id="beacons-status" class="link-status">Official Beacons website (not a referral link).</span>
+        </article>
+        <article class="panel cta-card">
+          <div class="eyebrow">Option two</div>
+          <h3>Explore Stan Store</h3>
+          <p>Worth examining if you prefer a product-focused paid storefront and want to compare its plans and tools.</p>
+          <a id="stan-link" class="btn btn-secondary" href="https://stan.store/" target="_blank" rel="noopener noreferrer" aria-describedby="stan-status"><span class="btn-label">View Stan Store</span> <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+          <span id="stan-status" class="link-status">Official Stan Store website (not a referral link).</span>
+        </article>
+      </div>
+      <p class="fine" style="margin-top:22px">This is an independent educational comparison, not an official page operated by Beacons or Stan Store.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <strong>Calm to Create · Alicia Builds Online</strong>
+    <div>Build with clarity. One useful move at a time.</div>
+    <div style="margin-top:8px">Information reviewed October 14, 2026. Please verify current provider terms before making a decision.</div>
+  </div>
+</footer>
+
+<script>
+  // ================================================================
+  // AFFILIATE LINK SETTINGS
+  // Paste each referral link between the quotation marks.
+  // Leave a value as "" (empty) and that button falls back to the
+  // official website and says it is NOT a referral link.
+  // ================================================================
+  const AFFILIATE_LINKS = {
+    // ▼ AFFILIATE SETTING 1 of 2: Beacons referral link
+    beacons: "https://beacons.ai/signup?c=calmtocreate",
+
+    // ▼ AFFILIATE SETTING 2 of 2: Stan Store referral link
+    stan: "https://join.stan.store/aliciapatterson"
+  };
+  // ================================================================
+
+  const platforms = [
+    {key:"beacons", name:"Beacons",    domain:"beacons.ai", link:"beacons-link", status:"beacons-status"},
+    {key:"stan",    name:"Stan Store", domain:"stan.store", link:"stan-link",    status:"stan-status"}
+  ];
+
+  // Only accept links on the platform's own domain (or its subdomains),
+  // so a typo or pasted wrong link can't send visitors somewhere else.
+  function isOnDomain(hostname, domain) {
+    return hostname === domain || hostname.endsWith("." + domain);
+  }
+
+  for (const platform of platforms) {
+    const value = (AFFILIATE_LINKS[platform.key] || "").trim();
+    const anchor = document.getElementById(platform.link);
+    const caption = document.getElementById(platform.status);
+    if (!anchor || !caption || !value) continue;
+    try {
+      const url = new URL(value);
+      if (url.protocol !== "https:") throw new Error("HTTPS required");
+      if (!isOnDomain(url.hostname, platform.domain)) throw new Error("Unexpected domain");
+      anchor.href = url.href;
+      anchor.rel = "sponsored nofollow noopener noreferrer";
+      anchor.querySelector(".btn-label").textContent = "View " + platform.name + " (referral link)";
+      caption.textContent = "Referral link: I may earn a commission if you sign up or purchase.";
+    } catch (_) {
+      caption.textContent = "Official " + platform.name + " website (not a referral link).";
+    }
+  }
+</script>
+</body>
+</html>
